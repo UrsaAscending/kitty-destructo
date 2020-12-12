@@ -253,7 +253,7 @@ game.onUpdateInterval(500, function () {
     if (levelHighScore < info.score()) {
         levelHighScore = info.score()
     }
-    if (levelHighScore < 0) {
+    if (levelHighScore < 50) {
         level1Enemies()
     } else {
         level1Boss()
