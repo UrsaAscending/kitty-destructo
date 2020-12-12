@@ -2,7 +2,8 @@
     "name": "Kitty Destructo",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
     },
     "files": [
         "main.blocks",
@@ -13,7 +14,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.2.16",
+        "target": "1.3.20",
         "targetId": "arcade"
     },
     "supportedTargets": [
