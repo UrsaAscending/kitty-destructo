@@ -17,15 +17,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Shark, function (sprite, otherSp
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
-        . . b b b b . .
-        . b 5 3 5 5 b .
-        b 5 d 3 3 d 5 b
-        b 5 3 5 5 1 5 b
-        c 5 3 5 5 1 d c
-        c d d 1 1 d d c
-        . f d d d d f .
-        . . f f f f . .
-    `, mySprite, 50, 0)
+        . . b b b b . . 
+        . b 5 3 5 5 b . 
+        b 5 d 3 3 d 5 b 
+        b 5 3 5 5 1 5 b 
+        c 5 3 5 5 1 d c 
+        c d d 1 1 d d c 
+        . f d d d d f . 
+        . . f f f f . . 
+        `, mySprite, 50, 0)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Robot, function (sprite, otherSprite) {
     info.changeScoreBy(-2)
@@ -67,7 +67,7 @@ function level1Boss () {
             ......222..222..222.............
             ......2222222222222.............
             ......2222222222222.............
-        `, SpriteKind.Squid)
+            `, SpriteKind.Squid)
         enemySprite.setPosition(128, 44)
         sprites.setDataNumber(enemySprite, "life", 13)
     }
@@ -95,23 +95,23 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Squid, function (sprite, oth
 function level1Enemies () {
     if (Math.percentChance(25)) {
         enemySprite = sprites.create(img`
-            . . . . . . . . . . . . . . . .
-            . . . 9 9 9 9 9 9 . . . . . . .
-            . . . 5 9 9 9 9 5 . . . . . . .
-            . . . . . 9 9 . . . . . . . . .
-            . . . . e e e e . . . . . . . .
-            . . . . e 5 5 e . . . . . . . .
-            . . 9 9 e 5 5 e 9 9 . . . . . .
-            . . 9 . e e e e . 9 . . . . . .
-            . . 5 . 3 3 3 3 . 5 . . . . . .
-            . . . . 3 3 3 3 . . . . . . . .
-            . . 3 3 3 3 3 3 3 3 . . . . . .
-            . . 3 . . . . . . 3 . . . . . .
-            . 3 3 3 . . . . 3 3 3 . . . . .
-            . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . .
-        `, SpriteKind.Robot)
+            . . . . . . . . . . . . . . . . 
+            . . . 9 9 9 9 9 9 . . . . . . . 
+            . . . 5 9 9 9 9 5 . . . . . . . 
+            . . . . . 9 9 . . . . . . . . . 
+            . . . . e e e e . . . . . . . . 
+            . . . . e 5 5 e . . . . . . . . 
+            . . 9 9 e 5 5 e 9 9 . . . . . . 
+            . . 9 . e e e e . 9 . . . . . . 
+            . . 5 . 3 3 3 3 . 5 . . . . . . 
+            . . . . 3 3 3 3 . . . . . . . . 
+            . . 3 3 3 3 3 3 3 3 . . . . . . 
+            . . 3 . . . . . . 3 . . . . . . 
+            . 3 3 3 . . . . 3 3 3 . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Robot)
         sprites.setDataNumber(enemySprite, "life", 2)
     } else if (Math.percentChance(25)) {
         enemySprite = sprites.create(img`
@@ -253,7 +253,7 @@ game.onUpdateInterval(500, function () {
     if (levelHighScore < info.score()) {
         levelHighScore = info.score()
     }
-    if (levelHighScore < 50) {
+    if (levelHighScore < 0) {
         level1Enemies()
     } else {
         level1Boss()
